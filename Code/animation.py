@@ -12,7 +12,7 @@ rcParams['figure.figsize'] = [12, 12]
 G = 6.67408 * 1e-11
 Re = 6371 * 1e3
 M = 5.972 * 1e24
-m = 4194 # 419455 for ISS
+m = 1000 # 419455 for ISS
 h = 408 * 1e3 #408*1e3 for ISS
 dt = 60
 
@@ -140,5 +140,9 @@ def animate(i):
     
     return lSatellite, lEnergy, lHeight, lVelocity
 
+anim = animation.FuncAnimation(fig, animate, init_func=init, 
+                            frames=365, interval=40, blit=True)
+
+#print(anim.__dict__)
 
 plt.show()
