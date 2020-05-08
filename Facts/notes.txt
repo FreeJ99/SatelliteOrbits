@@ -1,0 +1,21 @@
+Revolution time: 90 min
+Speed: 7.66 km/s
+Width: 109 m 
+Height: 73 m
+Weight: 419725 kg
+
+IZVODJENJE ZA RO
+
+Of some note is the fact that the atmospheric drag rate changes over time, most 
+notably with the solar cycle, but it can change for a variety of reasons, 
+especially for a body as dynamic as the ISS. With the current altitude ranging around 400. 
+The time that it took to go from 414 to 406 km was about 2.5 months, or, say, 75 days. That
+means that the drag on the spacecraft is about 106 m/day. Orbital energy can be calculated 
+by 𝑒𝑘=𝑚∗𝑣2/2. The energy at 406km is 29400301 J, and at 406.1 is 29399868 J*mass.
+Thus, 433 J*mass of energy is lost per day. The force is applied over all that time period 
+to make that energy lost. 𝐹=𝑚∗𝐴 provides us that 433 J*mass / (Distance traveled in a day) = m*a. 
+Thus, the constant acceleration that would keep it at the same orbit is 
+about 6.56𝑒−7𝑚/𝑠2, or 0.656𝜇𝑚/𝑠2.
+
+Given the station mass of 419455kg, the decelerating force would be 0.275 newtons.
+
