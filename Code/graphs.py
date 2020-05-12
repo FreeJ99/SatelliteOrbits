@@ -1,5 +1,3 @@
-#TODO moram ispraviti formulu za ro, nije dobra jer sam uzimao A i Cd za sferu, a ne za ISS
-
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -19,21 +17,17 @@ m = 419455 # 419455 for ISS
 h = 4.08 * 1e5#408*1e3 for ISS
 dt = 1
 
-viewSize = 2*Re
-
-Area = 7850 #Sphere with radius = 50m, overkill for ISS
-Cd = 0.47
+Area = 1324.4
+Cd = 2
 
 #Initial values######################################################################
 R = Re + h
 p = np.array([R, 0])
-v = 1 * np.array([0, np.sqrt(G*M/R)])
+v = 1 * np.array([0, np.sqrt(G*M/R)]) #||v|| = 7.66km/s for ISS 
 t = 0
 a = 0
-ro = 6.28e-11
-roGnd = 1.225
+ro = 3.3e-12 #http://www.braeunig.us/space/atmos.htm
 
-print(v)
 
 #Figures and axes##############################################################
 figEnergy, axEnergy = plt.subplots()
@@ -72,13 +66,8 @@ def printValues():
 #MAIN LOOP##########################################################################
 h = np.linalg.norm(p) - Re
 while(h > 4.0e5):
-    if(roGnd*np.exp(-h/1e4) > ro): #true when h<237km
-        ro = roGnd*np.exp(-h/1e4)
-
-    #if(t>1e4):
-    #    break
-    #if(t%500 == 0 or h<25130):
-    #    printValues()
+    if(t%100000 == 0 or h<25130):
+        printValues()
 
     R = np.linalg.norm(p)
     a = - p * G*M/(R**3) - np.linalg.norm(v)*v*ro*Area*Cd/(2*m)
@@ -103,7 +92,7 @@ axEnergy.plot(ts, Es, color='lightblue')
 axHeight.plot(ts, Hs, color='lightgreen')
 axVelocity.plot(ts, Vs, color='orange')
 
-#savePlots(base = '../Small_dt', figures=[figEnergy, figHeight, figVelocity], 
-#            paths=['ISS_E', 'ISS_H', 'ISS_V'])
+savePlots(base = '../Large_dt', figures=[figEnergy, figHeight, figVelocity], 
+            paths=['ISS_E', 'ISS_H', 'ISS_V'])
 
 plt.show()

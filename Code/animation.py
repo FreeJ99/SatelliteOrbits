@@ -14,12 +14,12 @@ Re = 6371 * 1e3
 M = 5.972 * 1e24
 m = 1000 # 419455 for ISS
 h = 408 * 1e3 #408*1e3 for ISS
-dt = 60
+dt = 10
 
 viewSize = 2*Re
 
-Area = 7850
-Cd = 0.47
+Area = 1324.4
+Cd = 2
 
 #Initial values######################################################################
 R = Re + h
@@ -141,7 +141,7 @@ def animate(i):
     return lSatellite, lEnergy, lHeight, lVelocity
 
 anim = animation.FuncAnimation(fig, animate, init_func=init, 
-                            frames=365, interval=40, blit=True)
+                            frames=365, interval=10, blit=True)
 
 #print(anim.__dict__)
 
