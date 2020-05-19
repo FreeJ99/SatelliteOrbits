@@ -15,7 +15,7 @@ Re = 6371 * 1e3
 M = 5.972 * 1e24
 m = 419455 # 419455 for ISS
 h = 4.08 * 1e5#408*1e3 for ISS
-dt = 0.05
+dt = 1
 
 Area = 125600
 Cd = 0.47
@@ -29,6 +29,7 @@ a = 0
 ro = 3.3e-12 #http://www.braeunig.us/space/atmos.htm
 
 
+'''
 #Figures and axes##############################################################
 figEnergy, axEnergy = plt.subplots()
 figHeight, axHeight = plt.subplots()
@@ -45,6 +46,7 @@ axHeight.set_ylabel('h (km)')
 axVelocity.set_title("Velocity")
 axVelocity.set_xlabel('t (days)')
 axVelocity.set_ylabel('v (m/s)')
+'''
 
 Es = []
 Hs = []
@@ -86,13 +88,16 @@ while(h > 4.0e5):
     Vs.append(np.linalg.norm(v))
     ts.append(t/(60*60*24))
 
-print("Execution time:", time.time() - program_start_time)
 
+print("Execution time:", time.time() - program_start_time)
+print(t/(60*60*24))
+'''
 axEnergy.plot(ts, Es, color='lightblue')
 axHeight.plot(ts, Hs, color='lightgreen')
 axVelocity.plot(ts, Vs, color='orange')
 
-savePlots(base = '../Small_dt', figures=[figEnergy, figHeight, figVelocity], 
+savePlots(base = '.', figures=[figEnergy, figHeight, figVelocity], 
             paths=['E', 'H', 'V'])
 
 plt.show()
+'''

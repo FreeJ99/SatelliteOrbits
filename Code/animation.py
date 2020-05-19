@@ -135,7 +135,7 @@ def animate(i):
     lSatellite.set_data([p[0]], [p[1]])
 
     appendToLine(lEnergy, axEnergy, (t, E))
-    appendToLine(lHeight, axHeight, (t, h))
+    appendToLine(lHeight, axHeight, (t, h/1000))
     appendToLine(lVelocity, axVelocity, (t, v))
     
     return lSatellite, lEnergy, lHeight, lVelocity
