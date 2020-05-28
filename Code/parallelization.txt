@@ -1,0 +1,5 @@
+My machine:
+Execution time without parallelization: 81.43455982208252
+Execution time with parallelization: 34.08027172088623
+Superast:
+Execution time with parallelization: 36.35069274902344
